@@ -1,10 +1,14 @@
 
 def splitlist(numbers):
-    """
-    ########################################
-    Code Your Program here
-    ########################################
-    """
+    idx = 0
+    for x in range(len(numbers)):
+        if numbers[x] < numbers[idx]:
+            idx = x
+    temp = numbers[0]
+    numbers[0] = numbers[idx]
+    numbers[idx] = temp
+    first, *others = numbers
+    return first, others
 
 
 def main():
